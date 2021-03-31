@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-docker run --rm -it -v ~/.aws:/root/.aws spring-asit-docker.jfrog.io/clouddata/aws-azure-login:latest "$@"
+export AZURE_DEFAULT_DURATION_HOURS=8
+docker run --add-host fs.axelspringer.de:145.243.234.1 --rm -it -v ~/.aws:/root/.aws sportradar/aws-azure-login --no-prompt "$@"
